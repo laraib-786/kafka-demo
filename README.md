@@ -17,4 +17,12 @@ How to run:
      `docker exec -it kafka1 kafka-consumer-groups --bootstrap-server localhost:9092 --group group_id --describe`    
    - To check all the list of groups  
      `exec -it kafka1 kafka-consumer-groups --bootstrap-server localhost:9092 --list`
+
+
+**Issues**
+1. Kafka is running fine but Spring boot not listening to the kafka.
+   - Check the logs in DEBUG mode  
+   `logging.level.org.apache.kafka=DEBUG`  
+   `logging.level.org.springframework.kafka=DEBUG`  
+   - But you're not seeing errors, try temporarily setting logging to TRACE level to capture more details
   
